@@ -1,4 +1,4 @@
-package publications;
+package productions;
 
 import collaborators.Collaborator;
 
