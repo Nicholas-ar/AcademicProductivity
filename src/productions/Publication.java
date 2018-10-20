@@ -7,15 +7,21 @@ public class Publication implements Comparable<Publication> {
     private String title;
     private ArrayList<String> authors;
     private Date publicationDate;
+    private String linkedProjectTitle;
 
-    public Publication(String title, ArrayList<String> authors, Date publicationDate) {
+    public Publication(String title,String linkedProjectTitle, ArrayList<String> authors, Date publicationDate) {
         this.title = title;
+        this.linkedProjectTitle = linkedProjectTitle;
         this.authors = authors;
         this.publicationDate = publicationDate;
     }
 
     public String getTitle() {
         return title;
+    }
+
+    public String getLinkedProjectTitle() {
+        return linkedProjectTitle;
     }
 
     public ArrayList<String> getAuthors() {
