@@ -1,6 +1,8 @@
 package controlMenus;
 
 import collaborators.Collaborator;
+import productions.Orientation;
+import productions.Publication;
 import projects.Project;
 import controlMenus.*;
 import viewMenus.*;
@@ -18,6 +20,8 @@ public class MainControl {
         CollaboratorView collaboratorView = new CollaboratorView();
         ArrayList<Project> projects = new ArrayList();
         ArrayList<Collaborator> collaborators = new ArrayList();
+        ArrayList<Orientation> orientations = new ArrayList();
+        ArrayList<Publication> publications = new ArrayList();
 
         while(on){
             String option = mainMenu.mainMenu();
@@ -44,7 +48,7 @@ public class MainControl {
 
                     break;
                 case "8":
-
+                    mainMenu.reportMenu(collaborators,projects,publications,orientations);
                     break;
                 case "9":
                     System.out.println("Goodbye!");
