@@ -16,7 +16,7 @@ public class Project {
     private String description;
     private Collaborator responsibleTeacher;
     private ArrayList<String> collaborators;
-    private ArrayList<Publication> associatedPublications;
+    private ArrayList<String> associatedPublications;
     private String currentStatus;
 
     public Project(String title, Date beginningDate, Date endDate, String financier, double financedAmount,
@@ -70,7 +70,7 @@ public class Project {
         return collaborators;
     }
 
-    public ArrayList<Publication> getAssociatedPublications() {
+    public ArrayList<String> getAssociatedPublications() {
         return associatedPublications;
     }
 
@@ -82,7 +82,7 @@ public class Project {
         this.collaborators.add(collaborator);
     }
 
-    public void setAssociatedPublications(ArrayList<Publication> associatedPublications) {
+    public void setAssociatedPublications(ArrayList<String> associatedPublications) {
         this.associatedPublications = associatedPublications;
     }
 

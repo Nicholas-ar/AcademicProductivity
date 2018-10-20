@@ -18,6 +18,7 @@ public class MainControl {
         MenuViews mainMenu = new MenuViews();
         ProjectsView projectView = new ProjectsView();
         CollaboratorView collaboratorView = new CollaboratorView();
+        ProductionView productionView = new ProductionView();
         ArrayList<Project> projects = new ArrayList();
         ArrayList<Collaborator> collaborators = new ArrayList();
         ArrayList<Orientation> orientations = new ArrayList();
@@ -40,17 +41,21 @@ public class MainControl {
                     break;
                 case "5":
 
+                    publications = productionView.createPublication(publications,collaborators,projects);
                     break;
                 case "6":
-
+                    orientations = productionView.createOrientation(collaborators,orientations);
                     break;
                 case "7":
 
                     break;
                 case "8":
-                    mainMenu.reportMenu(collaborators,projects,publications,orientations);
+
                     break;
                 case "9":
+                    mainMenu.reportMenu(collaborators,projects,publications,orientations);
+                    break;
+                case "10":
                     System.out.println("Goodbye!");
                     on = false;
                     break;

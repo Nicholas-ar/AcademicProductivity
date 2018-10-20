@@ -18,19 +18,20 @@ public class MenuViews {
         System.out.println("(2)Allocate collaborator to a project");
         System.out.println("(3)Change project status");
         System.out.println("(4)Create collaborator");
-        System.out.println("(5)");
-        System.out.println("(6)Consult collaborator");
-        System.out.println("(7)Consult project");
-        System.out.println("(8)Get academic production report");
-        System.out.println("(9)Shut down");
-        String option = input.next();
+        System.out.println("(5)Add publication");
+        System.out.println("(6)Add orientation");
+        System.out.println("(7)Consult collaborator");
+        System.out.println("(8)Consult project");
+        System.out.println("(9)Get academic production report");
+        System.out.println("(10)Shut down");
+        String option = input.nextLine();
         return option;
     }
 
     public String changeProjectStatus(){
         System.out.println("Type the name of the project you wish to change");
         Scanner input = new Scanner(System.in);
-        String option = input.next();
+        String option = input.nextLine();
         return option;
     }
 

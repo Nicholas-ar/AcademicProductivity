@@ -1,8 +1,19 @@
 package productions;
 
-import collaborators.Collaborator;
-
 public class Orientation {
-    private Collaborator teacher;
-    private Collaborator student;
+    private String teacher;
+    private String student;
+
+    public Orientation(String teacher, String student) {
+        this.teacher = teacher;
+        this.student = student;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public String getStudent() {
+        return student;
+    }
 }
