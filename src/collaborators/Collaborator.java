@@ -28,4 +28,10 @@ public class Collaborator {
     public boolean isGradStudent() {
         return isGradStudent;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + '\n' +
+                "Email: " + email + '\n';
+    }
 }
