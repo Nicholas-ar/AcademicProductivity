@@ -29,9 +29,9 @@ public class Project {
         this.objective = objective;
         this.description = description;
         this.responsibleTeacher = responsibleTeacher;
-        this.collaborators = null;
         this.currentStatus = "In elaboration";
-        this.associatedPublications = null;
+        this.collaborators = new ArrayList();
+        this.associatedPublications = new ArrayList();
     }
 
     public String getTitle() {

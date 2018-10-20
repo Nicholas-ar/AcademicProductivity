@@ -87,15 +87,14 @@ public class ProjectsView {
         }
         if(doesCollaboratorExist){
             for (Project project: projects){
-                if(!!isGradStudent){
+                if(!!isGradStudent && project.getCollaborators()!=null){
                     System.out.println(project.getCollaborators());
-                    System.out.println(project.getCurrentStatus());
                     if(project.getCollaborators().contains(name) && project.getCurrentStatus().equals("In progress")){
                         System.out.println("Student already in another in progress project, no changes made");
                         return projects;
                     }
                 }
-                if(project.getTitle().equals(title) && project.getCurrentStatus().equals("In progress")){
+                if(project.getTitle().equals(title) && project.getCurrentStatus().equals("In elaboration")){
                     doesProjectExist = true;
                 }
             }
@@ -124,18 +123,18 @@ public class ProjectsView {
         for(Project project: projects){
             if(project.getTitle().equals(title)){
                 doesProjectExist = true;
-                if(project.getCurrentStatus().equals("In elaboration") && project.getCollaborators()!=null){
+                if(project.getCurrentStatus().equals("In elaboration") && project.getCollaborators().size()>0){
                     System.out.println("Status changed to 'In progress'");
                     project.setCurrentStatus("In progress");
                 }
-                else if(project.getCurrentStatus().equals("In elaboration") && project.getCollaborators()==null){
+                else if(project.getCurrentStatus().equals("In elaboration") && project.getCollaborators().size()==0){
                     System.out.println("No collaborators, status unchanged");
                 }
-                else if(project.getCurrentStatus().equals("In progress") && project.getAssociatedPublications()!=null){
+                else if(project.getCurrentStatus().equals("In progress") && project.getAssociatedPublications().size()>0){
                     System.out.println("Status changed to 'Concluded'");
                     project.setCurrentStatus("Concluded");
                 }
-                else if(project.getCurrentStatus().equals("In progress") && project.getAssociatedPublications()==null){
+                else if(project.getCurrentStatus().equals("In progress") && project.getAssociatedPublications().size()==0){
                     System.out.println("No associated publications, status unchanged");
                 }
                 else if(project.getCurrentStatus().equals("Concluded")){
