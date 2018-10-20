@@ -15,6 +15,7 @@ public class MainControl {
         boolean on = true;
         MenuViews mainMenu = new MenuViews();
         ProjectsView projectView = new ProjectsView();
+        CollaboratorView collaboratorView = new CollaboratorView();
         ArrayList<Project> projects = new ArrayList();
         ArrayList<Collaborator> collaborators = new ArrayList();
 
@@ -31,14 +32,19 @@ public class MainControl {
                     projects = projectView.changeStatus(projects);
                     break;
                 case "4":
+                    collaborators = collaboratorView.createCollaborator(collaborators);
                     break;
                 case "5":
+
                     break;
                 case "6":
+
                     break;
                 case "7":
+
                     break;
                 case "8":
+
                     break;
                 case "9":
                     System.out.println("Goodbye!");

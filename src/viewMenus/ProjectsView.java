@@ -66,16 +66,58 @@ public class ProjectsView {
         }
         projects.add(new Project(title,beginningDate,endDate,financier,amountFinanced,objective,description,
                 responsibleTeacher));
+        System.out.println("Project created successfully");
         return projects;
 
     }
 
     public ArrayList<Project> addColaborator(ArrayList<Project> projects, ArrayList<Collaborator> collaborators) {
+        System.out.println("Type the title of the project you wish to add a collaborator to:");
+        String title = input.nextLine();
+        System.out.println("Type the name of the collaborator you wish to add:");
+        String name = input.nextLine();
+        boolean doesProjectExist = false;
+        boolean doesCollaboratorExist = false;
+        boolean isGradStudent = false;
+        for(Collaborator collaborator: collaborators){
+            if(collaborator.getName().equals(name)){
+                isGradStudent = collaborator.isGradStudent();
+                doesCollaboratorExist = true;
+            }
+        }
+        if(doesCollaboratorExist){
+            for (Project project: projects){
+                if(!!isGradStudent){
+                    System.out.println(project.getCollaborators());
+                    System.out.println(project.getCurrentStatus());
+                    if(project.getCollaborators().contains(name) && project.getCurrentStatus().equals("In progress")){
+                        System.out.println("Student already in another in progress project, no changes made");
+                        return projects;
+                    }
+                }
+                if(project.getTitle().equals(title) && project.getCurrentStatus().equals("In progress")){
+                    doesProjectExist = true;
+                }
+            }
+        }
+        else {
+            System.out.println("Collaborator not found");
+        }
+        if(doesProjectExist) {
+            for (Project project : projects) {
+                if (project.getTitle().equals(title)) {
+                    System.out.println("Adding " + name + " to " + title);
+                    project.addCollaborators(name);
+                }
+            }
+        }
+        else {
+            System.out.println("Project not found");
+        }
         return projects;
     }
 
     public ArrayList<Project> changeStatus(ArrayList<Project> projects) {
-        System.out.println();
         System.out.println("Type the title of the project you wish to change the status of:");
         String title = input.nextLine();
         boolean doesProjectExist = false;

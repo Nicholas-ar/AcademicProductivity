@@ -15,7 +15,7 @@ public class Project {
     private String objective;
     private String description;
     private Collaborator responsibleTeacher;
-    private ArrayList<Collaborator> collaborators;
+    private ArrayList<String> collaborators;
     private ArrayList<Publication> associatedPublications;
     private String currentStatus;
 
@@ -66,7 +66,7 @@ public class Project {
         return responsibleTeacher;
     }
 
-    public ArrayList<Collaborator> getCollaborators() {
+    public ArrayList<String> getCollaborators() {
         return collaborators;
     }
 
@@ -78,8 +78,8 @@ public class Project {
         return currentStatus;
     }
 
-    public void setCollaborators(ArrayList<Collaborator> collaborators) {
-        this.collaborators = collaborators;
+    public void addCollaborators(String collaborator) {
+        this.collaborators.add(collaborator);
     }
 
     public void setAssociatedPublications(ArrayList<Publication> associatedPublications) {
