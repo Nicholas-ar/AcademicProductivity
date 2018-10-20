@@ -4,7 +4,7 @@ import collaborators.Collaborator;
 import productions.Orientation;
 import productions.Publication;
 import projects.Project;
-import controlMenus.*;
+
 import viewMenus.*;
 
 import java.util.Collection;
@@ -40,17 +40,16 @@ public class MainControl {
                     collaborators = collaboratorView.createCollaborator(collaborators);
                     break;
                 case "5":
-
                     publications = productionView.createPublication(publications,collaborators,projects);
                     break;
                 case "6":
                     orientations = productionView.createOrientation(collaborators,orientations);
                     break;
                 case "7":
-
+                    collaboratorView.consultCollaborator(collaborators,projects,publications,orientations);
                     break;
                 case "8":
-
+                    projectView.consultProject(projects,publications);
                     break;
                 case "9":
                     mainMenu.reportMenu(collaborators,projects,publications,orientations);

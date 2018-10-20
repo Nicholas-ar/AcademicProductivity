@@ -36,4 +36,11 @@ public class Publication implements Comparable<Publication> {
     public int compareTo(Publication o) {
         return getPublicationDate().compareTo(o.getPublicationDate());
     }
+
+    @Override
+    public String toString() {
+        return "Publication title: " + title + '\n' +
+                "Authors:" + authors + '\n' +
+                "Publication Date:" + publicationDate + '\n';
+    }
 }

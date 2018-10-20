@@ -89,4 +89,19 @@ public class Project {
     public void setCurrentStatus(String currentStatus) {
         this.currentStatus = currentStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Title: " + title + '\n' +
+                "Beginning Date: " + beginningDate + '\n' +
+                "Ending Date: " + endDate + '\n' +
+                "Financier: " + financier + '\n' +
+                "FinancedAmount: $" + financedAmount + '\n' +
+                "Objective: " + objective + '\n' +
+                "Description: " + description + '\n' +
+                "ResponsibleTeacher: " + responsibleTeacher.getName() + '\n' +
+                "Collaborators: " + collaborators + '\n' +
+                "AssociatedPublications: " + associatedPublications + '\n' +
+                "CurrentStatus: " + currentStatus + '\n';
+    }
 }

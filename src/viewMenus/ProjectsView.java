@@ -1,6 +1,7 @@
 package viewMenus;
 
 import collaborators.Collaborator;
+import productions.Publication;
 import projects.Project;
 
 import java.text.ParseException;
@@ -146,5 +147,27 @@ public class ProjectsView {
             System.out.println("Project not found");
         }
         return projects;
+    }
+
+    public void consultProject(ArrayList<Project> projects, ArrayList<Publication> publications) {
+        System.out.println("Type the name of the project to consult:");
+        String projectName = input.nextLine();
+        Project tempProject = null;
+        for (Project project: projects){
+            if(project.getTitle().equals(projectName)){
+                tempProject = project;
+            }
+        }
+        if(tempProject!=null){
+            System.out.println(tempProject.toString());
+            for (Publication publication:publications){
+                if(publication.getLinkedProjectTitle().equals(projectName)){
+                    System.out.println(publication.toString());
+                }
+            }
+        }
+        else {
+            System.out.println("Project not found, going back to main menu");
+        }
     }
 }

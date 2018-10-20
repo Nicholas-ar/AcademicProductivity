@@ -1,6 +1,9 @@
 package viewMenus;
 
 import collaborators.Collaborator;
+import productions.Orientation;
+import productions.Publication;
+import projects.Project;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,5 +32,11 @@ public class CollaboratorView {
         collaborators.add(new Collaborator(name,email,isTeacher,isGradStudent));
         System.out.println("Collaborator successfully created");
         return collaborators;
+    }
+
+    public void consultCollaborator(ArrayList<Collaborator> collaborators, ArrayList<Project> projects,
+                                    ArrayList<Publication> publications, ArrayList<Orientation> orientations) {
+        System.out.println("Type the name of the collaborator to consult");
+        
     }
 }
